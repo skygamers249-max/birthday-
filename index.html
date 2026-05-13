@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Malaika 💖</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:white;
+}
+
+/* PAGES */
+
+.page{
+    width:100%;
+    height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:absolute;
+    overflow:hidden;
+    padding:20px;
+}
+
+.active{
+    display:flex;
+}
+
+/* FLOATING STARS */
+
+.star{
+    position:absolute;
+    color:#ffd700;
+    animation: floatStar linear infinite;
+    opacity:0.8;
+}
+
+@keyframes floatStar{
+    0%{
+        transform:translateY(100vh) rotate(0deg);
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* FLOATING SUNFLOWERS */
+
+.flower{
+    position:absolute;
+    font-size:30px;
+    animation: floatFlower linear infinite;
+}
+
+@keyframes floatFlower{
+    0%{
+        transform:translateY(100vh);
+    }
+    100%{
+        transform:translateY(-120vh);
+    }
+}
+
+/* PAGE 1 */
+
+.title{
+    font-size:65px;
+    color:#ff4f9a;
+    font-family:'Dancing Script',cursive;
+    animation: glow 2s infinite alternate;
+    text-align:center;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ffb6d9;
+    }
+    to{
+        text-shadow:0 0 25px #ff1493;
+    }
+}
+
+.cat-img{
+    width:280px;
+    margin-top:20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* BUTTON */
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff4f9a;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* PAGE 2 */
+
+.question{
+    font-size:45px;
+    color:#444;
+    text-align:center;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CRYING PAGE */
+
+.crying-cat{
+    width:300px;
+}
+
+.pretty{
+    font-size:40px;
+    margin-top:15px;
+    color:#ff4f9a;
+    font-family:'Dancing Script',cursive;
+}
+
+/* CAKE PAGE */
+
+.cake{
+    font-size:180px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+/* LETTER PAGE */
+
+.letter-container{
+    position:relative;
+    width:90%;
+    max-width:950px;
+    height:80vh;
+    overflow-y:auto;
+    background:#cbe8ff;
+    padding:60px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.2);
+    border:8px solid white;
+}
+
+.letter-title{
+    font-size:55px;
+    text-align:center;
+    margin-bottom:30px;
+    color:#ff4f9a;
+    font-family:'Dancing Script',cursive;
+}
+
+.letter-text{
+    font-size:22px;
+    line-height:1.9;
+    color:#333;
+    white-space:pre-wrap;
+}
+
+.corner-cat{
+    position:absolute;
+    width:120px;
+}
+
+.top-left{
+    top:10px;
+    left:10px;
+}
+
+.bottom-right{
+    bottom:10px;
+    right:10px;
+}
+
+/* Typing Cursor */
+
+.cursor{
+    display:inline-block;
+    background:#333;
+    width:3px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING STARS -->
+<script>
+for(let i=0;i<40;i++){
+    let star=document.createElement("div");
+    star.classList.add("star");
+    star.innerHTML="★";
+    star.style.left=Math.random()*100+"vw";
+    star.style.fontSize=(Math.random()*20+10)+"px";
+    star.style.animationDuration=(Math.random()*10+8)+"s";
+    document.body.appendChild(star);
+}
+
+for(let i=0;i<25;i++){
+    let flower=document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML="🌻";
+    flower.style.left=Math.random()*100+"vw";
+    flower.style.animationDuration=(Math.random()*10+10)+"s";
+    document.body.appendChild(flower);
+}
+</script>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+    <div class="title">
+        🎉 Happy Birthday Malaika 🎉
+    </div>
+
+    <img class="cat-img"
+    src="https://i.imgur.com/OYVpe2W.png">
+
+    <button onclick="showPage('page2')">
+        Next 💖
+    </button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+    <div class="question">
+        There is a surprise for you ✨<br><br>
+        You wanna see?
+    </div>
+
+    <div>
+        <button onclick="showPage('page4')">
+            Yes 🤍
+        </button>
+
+        <button onclick="showPage('page3')">
+            No 😭
+        </button>
+    </div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+    <img class="crying-cat"
+    src="https://i.imgur.com/N6b8J8N.png">
+
+    <div class="pretty">
+        Please Pretty 🥺🌻
+    </div>
+
+    <button onclick="showPage('page2')">
+        No Fine 💔
+    </button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+    <div class="cake">
+        🎂🕯️
+    </div>
+
+    <div class="question" style="margin-top:20px;">
+        Make A Wish ✨
+    </div>
+
+    <button onclick="showPage('page5'); startTyping();">
+        Blow Candle 💨
+    </button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<div class="letter-container">
+
+    <img class="corner-cat top-left"
+    src="https://i.imgur.com/OYVpe2W.png">
+
+    <img class="corner-cat bottom-right"
+    src="https://i.imgur.com/OYVpe2W.png">
+
+    <div class="letter-title">
+        HAPPY BIRTHDAY CUTIE! ✨🤍
+    </div>
+
+    <div class="letter-text" id="typingText"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function showPage(pageId){
+
+    let pages=document.querySelectorAll(".page");
+
+    pages.forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+}
+
+/* TYPING EFFECT */
+
+const message=`Happy Birthday to the girl who randomly came into my life through Snapchat and became one of the most special people to me 🤍🎂
+
+It’s honestly crazy how a random conversation turned into such an unforgettable bond. You’re cute, mature, caring, and one of the few people who truly understand my vibe and personality so naturally. Talking to you always felt easy and comforting in a way I can’t really explain.
+
+This August we’ll complete 2 years of friendship. Our first year was honestly one of the best phases of my life, full of happiness, laughter, and memories I’ll always keep close to my heart. Even though this second year became difficult because of misunderstandings and fights, I still value you and our friendship a lot because some people remain special no matter what happens.
+
+I still remember those nights when we stayed awake till morning on Instagram, sharing reels, talking nonstop, laughing at random things, and completely forgetting about time. Those moments genuinely became some of my favorite memories.
+
+And honestly, the fact that I even gave you one of my Instagram accounts just so we could talk more comfortably says a lot about how important you became to me. I don’t usually do things like that, but with you everything just felt natural.
+
+I’ll also never forget when I met your sister and she delivered the birthday cards and the scented candle from you. That gesture meant so much to me because it showed how thoughtful and caring you really are.
+
+No matter how things turned out between us, I’ll always appreciate the memories, comfort, and happiness you brought into my life. On your birthday, I just hope you stay genuinely happy, peaceful, successful, and surrounded by love because you truly deserve all of it.
+
+Happy Birthday once again ✨🤍`;
+
+let i=0;
+
+function startTyping(){
+
+    const text=document.getElementById("typingText");
+
+    text.innerHTML="";
+
+    let typing=setInterval(()=>{
+
+        if(i<message.length){
+
+            text.innerHTML+=message.charAt(i);
+
+            i++;
+
+        }else{
+
+            clearInterval(typing);
+
+        }
+
+    },25);
+
+}
+
+</script>
+
+</body>
+</html>
